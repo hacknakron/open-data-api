@@ -1,24 +1,17 @@
-# README
+# Open Data API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technical Details
+### Setting Environment Variables
+The project uses the [dotenv]() gem to manage environment variables. This is how sensative information is stored (and not committed to source control). To get the application to run, you'll need a file called `.env` in the root of your project. It should have the following items in it:
+- FTP_HOST
+- FTP_PORT
+- FTP_USERNAME
+- FTP_PASSWORD
 
-Things you may want to cover:
+### Running the API Server
+1. After downloading the project locally, run `bundle install` in the project root directory.
+2. Run `rails db:migrate` to setup the database.
 
-* Ruby version
+### Running the File Importer
+From the root of the project, run `rake import_ward_data`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
