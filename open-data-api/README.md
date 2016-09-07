@@ -2,7 +2,7 @@
 
 ## Technical Details
 ### Setting Environment Variables
-The project uses the [dotenv]() gem to manage environment variables. This is how sensative information is stored (and not committed to source control). To get the application to run, you'll need a file called `.env` in the root of your project. It should have the following items in it:
+The project uses the [dotenv](https://github.com/bkeepers/dotenv) gem to manage environment variables. This is how sensative information is stored (and not committed to source control). To get the application to run, you'll need a file called `.env` in the root of your project. It should have the following items in it:
 - FTP_HOST
 - FTP_PORT
 - FTP_USERNAME
