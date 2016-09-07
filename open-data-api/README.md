@@ -15,3 +15,13 @@ The project uses the [dotenv](https://github.com/bkeepers/dotenv) gem to manage 
 ### Running the File Importer
 From the root of the project, run `rake import_ward_data`
 
+### Contributing to the Project
+We encourage everyone to submit pull requests to this project when they see something that could be improved. When contributing, we ask that you submit detailed pull request explaining at minimum:
+
+#### What Got Done
+- Describe what was done in the pull request.
+- Try to keep the pull requests small and focused on smaller issues.
+
+#### How to Test
+- Tell us how to test your changes from both a technical aspect and a user aspect.
+
