@@ -144,6 +144,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rake
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
