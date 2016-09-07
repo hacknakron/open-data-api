@@ -2,6 +2,7 @@
 
 ## Technical Details
 [![Build Status](https://travis-ci.org/hacknakron/open-data-api.svg?branch=master)](https://travis-ci.org/hacknakron/open-data-api)
+
 *Ruby Version*: 2.3.1
 
 *Rails Version*: 5.0.0.1
