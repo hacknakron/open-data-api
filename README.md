@@ -7,6 +7,10 @@
 
 *Rails Version*: 5.0.0.1
 
+### Setting up your environment
+To get your environment setup, follow this guide: http://guides.rubyonrails.org/getting_started.html
+Another great rails resource: https://www.railstutorial.org/
+
 ### Setting Environment Variables
 The project uses the [dotenv](https://github.com/bkeepers/dotenv) gem to manage environment variables. This is how sensative information is stored (and not committed to source control). To get the application to run, you'll need a file called `.env` in the root of your project. It should have the following items in it:
 - FTP_HOST
