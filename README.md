@@ -20,7 +20,7 @@ The project uses the [dotenv](https://github.com/bkeepers/dotenv) gem to manage 
 
 ### Running the API Server
 1. After downloading the project locally, run `bundle install` in the project root directory.
-2. Run `rails db:migrate` to setup the database.
+2. Run `rails db:create db:migrate` to create and setup the database.
 3. Run `bundle exec rails s` to start the rails API server.
 
 ### Running the File Importer
