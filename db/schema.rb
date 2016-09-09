@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160909012615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "community_learning_centers", force: :cascade do |t|
+    t.string   "school_name", null: false
+    t.string   "address",     null: false
+    t.string   "gym_1"
+    t.string   "gym_2"
+    t.string   "gym_3"
+    t.string   "auditorium"
+    t.string   "cafeteria"
+    t.string   "lrc"
+    t.string   "music"
+    t.string   "art"
+    t.string   "classroom"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
 end

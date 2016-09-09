@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'dotenv-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.18.4'
