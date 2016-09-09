@@ -12,3 +12,6 @@
 
 # Ignore the .env file
 .env
+
+# Ignore the CSV data file
+/app/data/*
