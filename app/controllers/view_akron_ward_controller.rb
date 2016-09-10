@@ -1,5 +1,7 @@
 class ViewAkronWardController < ActionController::API
   def index
+    execute_query = ExecuteRawSql.new
+    execute_query.query('test', 'test')
     render json: ViewAkronWard.all
   end
 

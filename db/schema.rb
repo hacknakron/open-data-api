@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910170353) do
+ActiveRecord::Schema.define(version: 20160910204558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20160910170353) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "data_controller_worked", id: false, force: :cascade do |t|
+    t.string "col1"
+  end
+
+  create_table "refresh_results", id: :integer, force: :cascade do |t|
+    t.string  "action"
+    t.string  "csv_file"
+    t.integer "record_count"
+    t.string  "url"
+  end
+
   create_table "view_akron_wards", primary_key: "wardobjectid", id: :integer, force: :cascade do |t|
     t.integer "wardnumber"
     t.string  "wardname",                    limit: 7
@@ -49,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160910170353) do
     t.uuid    "wardglobalid"
     t.decimal "wardshape_starea",                        precision: 13, scale: 2
     t.decimal "wardshape_stlength",                      precision: 13, scale: 2
+    t.text    "column19"
   end
 
 end
