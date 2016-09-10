@@ -1,6 +1,4 @@
 class CreateViewAkronWards < ActiveRecord::Migration[5.0]
-
-
   def up
     execute <<-SQL
 
@@ -31,6 +29,5 @@ class CreateViewAkronWards < ActiveRecord::Migration[5.0]
   def down
     drop_table :view_akron_wards
   end
-
 end
 
