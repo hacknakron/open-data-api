@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :community_learning_center, only: [:index]
+
   resources :view_akron_ward, only: [:index]
-  resources :view_test, only: [:index]
+
+  get "/view_akron_ward/find_by", to: "view_akron_ward#find_by"
+
   root 'home#home'
 end
