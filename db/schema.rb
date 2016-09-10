@@ -31,10 +31,6 @@ ActiveRecord::Schema.define(version: 20160910204558) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "data_controller_worked", id: false, force: :cascade do |t|
-    t.string "col1"
-  end
-
   create_table "refresh_results", id: :integer, force: :cascade do |t|
     t.string  "action"
     t.string  "csv_file"
@@ -60,7 +56,6 @@ ActiveRecord::Schema.define(version: 20160910204558) do
     t.uuid    "wardglobalid"
     t.decimal "wardshape_starea",                        precision: 13, scale: 2
     t.decimal "wardshape_stlength",                      precision: 13, scale: 2
-    t.text    "column19"
   end
 
 end
