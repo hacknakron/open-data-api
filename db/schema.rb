@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909012615) do
+ActiveRecord::Schema.define(version: 20160910165335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,26 @@ ActiveRecord::Schema.define(version: 20160909012615) do
     t.string   "classroom"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "view_akron_wards", primary_key: "wardobjectid", id: :integer, force: :cascade do |t|
+    t.integer "wardnumber"
+    t.string  "wardname",                    limit: 7
+    t.string  "wardcode",                    limit: 3
+    t.integer "totalpopulation"
+    t.integer "deviationfromaverage"
+    t.decimal "deviationfromaveragepercent",             precision: 7,  scale: 5
+    t.integer "whitepopulation"
+    t.decimal "whitepopulationpercent",                  precision: 7,  scale: 5
+    t.integer "blackpopulation"
+    t.decimal "blackpopulationpercent",                  precision: 7,  scale: 5
+    t.integer "hispanicpopulation"
+    t.decimal "hispanicpopulationpercent",               precision: 7,  scale: 5
+    t.string  "councilperson",               limit: 50
+    t.string  "councilpersonweblink",        limit: 100
+    t.uuid    "wardglobalid"
+    t.decimal "wardshape_starea",                        precision: 13, scale: 2
+    t.decimal "wardshape_stlength",                      precision: 13, scale: 2
   end
 
 end
