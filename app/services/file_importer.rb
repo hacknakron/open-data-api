@@ -8,7 +8,6 @@ ENV['pg_database'] ||= 'open-data-api_development'
 ENV['pg_username'] ||= 'postgres'
 ENV['pg_password'] ||= ''
 
-
 class FileImporter
     attr_reader :csv, :file, :path, :name
 
@@ -47,12 +46,12 @@ private
     end
 
     def create_raw_table
-        puts "CREATING TABLE NAME: '#{raw_table_name_with_time}'"
+        puts "CREATING TABLE NAME: '#{raw_table_name}'"
         puts "--------------------------------------------------"
-        @current_table_name = raw_table_name_with_time
-        ActiveRecord::Migration.create_table(@current_table_name.to_sym) do |t| 
-            @csv.headers.each do |column_name| 
-                t.column column_name.to_sym, :string, limit: 60
+        @current_table_name = raw_table_name
+        ActiveRecord::Migration.create_table(@current_table_name.to_sym) do |t|
+            @csv.headers.each do |column_name|
+                t.column column_name.to_sym, :string, limit: 300
             end
         end
         puts "--------------------------------------------------"
