@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909012615) do
+ActiveRecord::Schema.define(version: 20161006223819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,23 @@ ActiveRecord::Schema.define(version: 20160909012615) do
     t.string   "classroom"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "wards", force: :cascade do |t|
+    t.integer "district_id"
+    t.string  "distract_name"
+    t.string  "ward_id"
+    t.float   "total_population"
+    t.float   "dx_dev"
+    t.float   "total_dvp"
+    t.float   "white_population"
+    t.float   "black_population"
+    t.float   "hispanic_population"
+    t.string  "council_person"
+    t.string  "web_link"
+    t.string  "global_id"
+    t.string  "shape_st_area"
+    t.string  "shape_st_length"
   end
 
 end
