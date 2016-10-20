@@ -1,4 +1,4 @@
-task :import_wards_data => :environment do
-  file_importer = FileImporter.new("#{Rails.root}/app/data", "2012wards.csv")
-  file_importer.execute
+task :import_ward_data => :environment do
+  file_importer = FileImporter.new
+  file_importer.import_file("City_Data/2016/Q3/", "2012Wards.csv")
 end
