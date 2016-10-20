@@ -2,7 +2,6 @@ require 'net/ftp'
 require 'csv'
 
 class FileImporter
-
   def get_file(filepath, filename)
     ftp = open_ftp_connection()
 
@@ -46,8 +45,6 @@ class FileImporter
       end
     end
   end
-
-private
 
   def open_ftp_connection
     ftp = Net::FTP.new
