@@ -10,9 +10,38 @@ class ViewAkronWardController < ActionController::API
   end
 
   def find_where
-    column   = params[:column]
-    operator = params[:operator] || ''
-    value    = params[:value]
+    column         = params[:column]
+    operator       = params[:operator]
+    value          = params[:value]
+
+    if find_where_columns_present?
+
+      column_type  = column_type(column)
+      query_string = build_query_string(operator, column)
+      value        = update_value_type(column, value)
+
+      render json: ViewAkronWard.where(query_string, value)
+    else
+      render html: "Improper Query!"
+    end
+  end
+
+  private
+
+  def update_value_type(column, value)
+    case column
+    when :integer
+      value = value.to_i
+    when :date
+      value = value.to_date
+    end
+
+    value
+  end
+
+
+  def build_query_string(operator, column)
+    query_string = ''
 
     case operator
     when 'less_than'
@@ -25,21 +54,11 @@ class ViewAkronWardController < ActionController::API
       query_string = column << ' >= ?'
     end
 
-    if find_where_columns_present?
-      if column_type(column) == :integer
-        render json: ViewAkronWard.where(query_string, value.to_i)
-      else
-        render json: ViewAkronWard.where(query_string, value)
-      end
-    else
-      render html: "Improper Query!"
-    end
+    query_string
   end
 
-  private
 
   def column_type(column)
-
     column_type = ''
 
     ViewAkronWard.columns.each do |obj|
