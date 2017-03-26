@@ -9,7 +9,12 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+
 ActiveRecord::Schema.define(version: 20161006223819) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "wards", force: :cascade do |t|
     t.integer "district_id"
     t.string  "district_name"
@@ -26,4 +31,5 @@ ActiveRecord::Schema.define(version: 20161006223819) do
     t.string  "shape_st_area"
     t.string  "shape_st_length"
   end
+
 end
