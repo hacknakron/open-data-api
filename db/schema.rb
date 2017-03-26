@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326220417) do
+ActiveRecord::Schema.define(version: 20170326214422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "luc_codes", force: :cascade do |t|
-    t.integer  "object_id"
-    t.integer  "value"
-    t.string   "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "parcel_appraisals", force: :cascade do |t|
     t.integer  "object_id"
