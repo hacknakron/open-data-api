@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006223819) do
+ActiveRecord::Schema.define(version: 20170326214422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "parcel_appraisals", force: :cascade do |t|
+    t.integer  "object_id"
+    t.integer  "parcel_id"
+    t.integer  "land_value"
+    t.integer  "building_value"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "wards", force: :cascade do |t|
     t.integer "district_id"
