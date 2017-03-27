@@ -150,6 +150,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.0)
+  dotenv
   dotenv-rails
   jbuilder (~> 2.5)
   listen (~> 3.0.5)
