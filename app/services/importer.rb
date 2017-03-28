@@ -11,7 +11,11 @@ class Importer
 
   protected
   def convert_string(val)
-    return "" if val.downcase == "none" || val.blank?
+    return "" if val.blank? || val.try(:downcase) == "none"
     val
+  end
+  def convert_int(val)
+    return nil if val.blank? || val.try(:downcase) == "none"
+    val.try(:to_i)
   end
 end
