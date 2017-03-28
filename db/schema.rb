@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170326234149) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "neighborhood", force: :cascade do |t|
+  create_table "neighborhoods", force: :cascade do |t|
     t.string   "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 20170326234149) do
     t.string   "owner_1"
     t.string   "owner_2"
     t.string   "owner_address_1"
+    t.string   "owner_address_2"
+    t.string   "owner_address_3"
     t.integer  "owner_zip_code"
     t.integer  "owner_zip_code_2"
     t.string   "owner_city"
@@ -86,20 +88,17 @@ ActiveRecord::Schema.define(version: 20170326234149) do
   end
 
   create_table "wards", force: :cascade do |t|
-    t.integer "district_id"
+    t.integer "object_id"
+    t.string  "district_id"
     t.string  "district_name"
+    t.string  "ward_name"
     t.string  "ward_id"
     t.float   "total_population"
-    t.float   "dx_dev"
-    t.float   "total_dvp"
     t.float   "white_population"
     t.float   "black_population"
     t.float   "hispanic_population"
     t.string  "council_person"
     t.string  "web_link"
-    t.string  "global_id"
-    t.string  "shape_st_area"
-    t.string  "shape_st_length"
   end
 
 end

@@ -18,8 +18,8 @@ class AddParcels < ActiveRecord::Migration[5.0]
       t.string :owner_1
       t.string :owner_2
       t.string :owner_address_1
-      t.string :owner_address_1
-      t.string :owner_address_1
+      t.string :owner_address_2
+      t.string :owner_address_3
       t.integer :owner_zip_code
       t.integer :owner_zip_code_2
       t.string :owner_city
