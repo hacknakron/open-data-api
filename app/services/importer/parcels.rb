@@ -7,9 +7,6 @@ class Importer::Parcels < Importer
 
       land_use_code = LandUseCode.find_by_value(row[:luc])
 
-      parcel_class = ParcelClass.find_or_create_by!(value: row[:class])
-      neighborhood = Neighborhood.find_or_create_by!(value: row[:nbhd])
-
       parcel.assign_attributes({parcel_id: convert_int(row[:parid]),
                                 tax_year: convert_int(row[:taxyr]),
                                 alternate_id: convert_string(row[:alt_id]),
@@ -20,10 +17,8 @@ class Importer::Parcels < Importer
                                 address_suffix_2: convert_string(row[:adrsuf2]),
                                 address: convert_string(row[:addr]),
                                 zip_code: convert_int(row[:zip]),
-                                neighborhood: neighborhood,
-                                parcel_class: parcel_class,
                                 land_use_code: land_use_code,
-                                acres: convert_string(row[:acres]),
+                                acres: convert_string(row[:calcares]),
                                 current_resident_1: convert_string(row[:mail1]),
                                 current_resident_2: convert_string(row[:mail2]),
                                 owner_1: convert_string(row[:own1]),
@@ -35,8 +30,7 @@ class Importer::Parcels < Importer
                                 owner_zip_code_2: convert_int(row[:ownzip2]),
                                 owner_city: convert_string(row[:cityname]),
                                 owner_state: convert_string(row[:statecode]),
-                                description: convert_string(row[:description]),
-                                rental_date: convert_string(row[:isrental])
+                                description: convert_string(row[:description])
                                })
 
       next if parcel.parcel_id.blank?

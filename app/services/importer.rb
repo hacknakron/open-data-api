@@ -10,12 +10,18 @@ class Importer
   end
 
   protected
-  def convert_string(val)
-    return "" if val.blank? || val.try(:downcase) == "none"
-    val
+  def convert_date(val)
+    return nil if val.blank? || val.try(:downcase) == "none"
+    Date.strptime(val, '%m-%d-%Y')
   end
+
   def convert_int(val)
     return nil if val.blank? || val.try(:downcase) == "none"
     val.try(:to_i)
+  end
+
+  def convert_string(val)
+    return "" if val.blank? || val.try(:downcase) == "none"
+    val
   end
 end

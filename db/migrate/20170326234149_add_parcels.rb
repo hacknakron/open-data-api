@@ -25,10 +25,7 @@ class AddParcels < ActiveRecord::Migration[5.0]
       t.string :owner_city
       t.string :owner_state
       t.string :description
-      t.datetime :rental_date
-      t.integer :parcel_class_id, foreign_key: true
       t.integer :land_use_code_id, foreign_key: true
-      t.integer :neighborhood_id, foreign_key: true
 
       t.timestamps
     end

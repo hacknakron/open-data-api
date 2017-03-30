@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326234149) do
+ActiveRecord::Schema.define(version: 20170330013549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,6 @@ ActiveRecord::Schema.define(version: 20170326234149) do
     t.integer  "object_id"
     t.integer  "value"
     t.string   "label"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "neighborhoods", force: :cascade do |t|
-    t.string   "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,10 +32,17 @@ ActiveRecord::Schema.define(version: 20170326234149) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "parcel_classes", force: :cascade do |t|
-    t.string   "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "parcel_sales", force: :cascade do |t|
+    t.integer  "object_id",         null: false
+    t.integer  "parcel_id",         null: false
+    t.datetime "sales_date",        null: false
+    t.integer  "price"
+    t.datetime "transaction_date"
+    t.string   "previous_owner"
+    t.string   "new_owner"
+    t.integer  "approximate_total"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "parcels", force: :cascade do |t|
@@ -69,10 +70,7 @@ ActiveRecord::Schema.define(version: 20170326234149) do
     t.string   "owner_city"
     t.string   "owner_state"
     t.string   "description"
-    t.datetime "rental_date"
-    t.integer  "parcel_class_id"
     t.integer  "land_use_code_id"
-    t.integer  "neighborhood_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
