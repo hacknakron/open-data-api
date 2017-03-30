@@ -2,9 +2,8 @@ require 'net/ftp'
 require 'csv'
 
 class DataImporter
-  IMPORT_ORDER = [:LUCCODES, :CAMAPARDAT, :CAMASALES, :CAMAAPRVAL].freeze
-  # IMPORT_ORDER = [:LUCCODES, :CAMAAPRVAL].freeze
-  # IMPORT_ORDER = [:CAMASALES].freeze
+  # IMPORT_ORDER = [:LUCCODES, :CAMAPARDAT, :CAMASALES, :CAMAAPRVAL].freeze
+  IMPORT_ORDER = [:LUCCODES, :CAMASALES, :CAMAAPRVAL].freeze
   FILE_IMPORTERS = {LUCCODES: Importer::LandUseCodes,
                     CAMAPARDAT: Importer::Parcels,
                     CAMASALES: Importer::ParcelSales,

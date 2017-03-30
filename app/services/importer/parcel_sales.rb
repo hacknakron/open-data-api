@@ -15,6 +15,7 @@ class Importer::ParcelSales < Importer
       })
 
       next if (parcel_sale.sales_date.blank? ||
+               parcel_sale.parcel.blank? ||
                parcel_sale.previous_owner.blank? ||
                parcel_sale.new_owner.blank?)
 
