@@ -7,6 +7,8 @@
 
 *Rails Version*: 5.0.0.1
 
+*Database Type*: PostgresSQL
+
 ### Setting up your environment
 To get your environment setup, follow this guide: http://guides.rubyonrails.org/getting_started.html
 Another great rails resource: https://www.railstutorial.org/
