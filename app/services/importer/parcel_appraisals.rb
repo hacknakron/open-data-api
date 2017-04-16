@@ -11,7 +11,7 @@ class Importer::ParcelAppraisals < Importer
 
       next if parcel_appraisal.land_value.blank? || parcel_appraisal.building_value.blank? || parcel_appraisal.parcel.blank?
 
-      parcel_appraisal.save! if parcel_appraisal.changed? || land_use_code.new_record?
+      parcel_appraisal.save! if parcel_appraisal.changed? || parcel_appraisal.new_record?
     end
   end
 end

@@ -26,7 +26,8 @@ The project uses the [dotenv](https://github.com/bkeepers/dotenv) gem to manage 
 3. Run `bundle exec rails s` to start the rails API server.
 
 ### Running the File Importer
-From the root of the project, run `rake import_ward_data`
+From the root of the project, run `rake data:import`
+NOTE: You must have correctly set the ENV attributes for the import to pull correct data from the FTP server.
 
 ### Contributing to the Project
 We encourage everyone to submit pull requests to this project when they see something that could be improved. When contributing, we ask that you submit detailed pull request explaining at minimum:

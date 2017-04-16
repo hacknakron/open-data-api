@@ -5,5 +5,6 @@ class Parcel < ApplicationRecord
   belongs_to :land_use_code
 
   has_many :parcel_sales
+  has_many :parcel_appraisals
 
 end

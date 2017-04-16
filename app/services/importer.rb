@@ -6,7 +6,7 @@ class Importer
   end
 
   def import!
-    return nil if @data.blank?
+    nil if @data.blank?
   end
 
   protected
