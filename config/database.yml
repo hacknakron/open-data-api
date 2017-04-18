@@ -3,17 +3,19 @@ default: &default
   encoding: unicode
   pool: 5
   host: localhost
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  username: <%= ENV['POSTGRES_USERNAME'] %>
 
 development:
   <<: *default
-  database: open-data-api_development
+  database: <%= ENV['POSTGRES_DATABASE'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: open-data-api_test
+  database: <%= ENV['POSTGRES_DATABASE'] %>_test
 
 production:
   <<: *default
