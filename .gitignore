@@ -1,3 +1,4 @@
+.DS_Store
 # Ignore bundler config.
 /.bundle
 .idea/*
@@ -6,7 +7,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+db/seed
 # Ignore Byebug command history file.
 .byebug_history
 
