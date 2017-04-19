@@ -9,6 +9,7 @@ gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem "paper_trail"
 gem "dotenv"
+gem 'resque', "~> 1.22.0"
 group :development, :test do
   gem 'pry-byebug'
 end
