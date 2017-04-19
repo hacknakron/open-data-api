@@ -1,6 +1,6 @@
 require 'net/ftp'
-class COAFTPConnection
 
+class COAFTPConnection
   def self.with_connection(&block)
     begin
       Rails.logger.info "Opening COA FTP connection"

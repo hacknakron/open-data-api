@@ -9,7 +9,7 @@ class DataImporter
                     CAMAAPRVAL: Importer::ParcelAppraisals}.freeze
 
   def get_file_data(filename)
-    COAFTPConnection.with_connection do |ftp|
+    ::COAFTPConnection.with_connection do |ftp|
       ftp.getbinaryfile(filename, nil, 1024)
     end
   end
