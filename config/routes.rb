@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   namespace 'api' do
     root 'root#index'
     resources :parcels, only: [:index, :show]
+    resources :land_use_codes, only: [:index, :show] do 
+    	collection do
+    		get :classes
+    	end
+    end
   end
 
   root 'housing#index'
