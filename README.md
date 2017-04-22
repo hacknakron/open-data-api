@@ -49,6 +49,10 @@ objects, they will contain a `meta` object with `count` and `pages` which refer
 to the total number of records in the database and the total number of pages
 which can be requested.
 
+API responses contain an `etag` so that you can do conditional GET requests to
+the server. If the etag matches the data that would have been returned, a 304
+response is sent without a response body.
+
 #### Pagination
 
 For API calls that return multiple results, you can pass a `page` and `per_page`
@@ -81,7 +85,13 @@ For example:
 
 This will return the first page of parcels for tax year 2017.
 
-##### Filter Single Property with Multiple Values
+##### Filter Single Property with Multiple Possible Values
+
+`/api/parcels?filters[tax_year][]=2017&filters[tax_year][]=2016`
+
+This will return the first page of parcels for tax year 2016 or 2017.
+
+##### Filter Multiple Properties
 
 `/api/parcels?filters[tax_year][]=2017&filters[use_class][]=A`
 
