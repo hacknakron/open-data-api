@@ -4,12 +4,14 @@ ruby "2.3.1"
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'dotenv-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'kaminari'
 gem 'pg', '~> 0.18.4'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem "paper_trail"
 gem "dotenv"
 gem 'resque', "~> 1.22.0"
+
 group :development, :test do
   gem 'pry-byebug'
 end
