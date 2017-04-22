@@ -1,0 +1,23 @@
+.internal-page {
+  margin-top: 150px !important;
+
+  h1 {
+    color: $primary-color-light;
+    font-size: 3.25em;
+  }
+
+  h2 {
+    color: $primary-color-light;
+    font-weight: bold;
+    line-height: 1.25;
+  }
+
+  .subheading {
+    color: $primary-color-dark;
+    font-family: 'work-sans';
+    font-size: 2em;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+  }
+}

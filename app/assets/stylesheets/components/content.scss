@@ -1,0 +1,38 @@
+.content-block {
+  box-sizing: border-box;
+  max-width: 500px;
+}
+
+.content-container-2-up {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .content-block {
+    flex: 0 0 100%;
+  }
+
+  @media screen and (min-width: $break-large-screen) {
+    .content-block {
+      flex: 0 0 45%;
+    }
+  }
+}
+
+.content-container-3-up {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .content-block {
+    flex: 0 0 100%;
+  }
+
+  @media screen and (min-width: $break-large-screen) {
+    .content-block {
+      flex: 0 0 30%;
+    }
+  }
+}

@@ -5,17 +5,18 @@
 // lines to that file. NOTE: Edit the lines to remove "!default".
 
 // The font size set on the root html element.
-$base-font-size: 16px !default;
+$base-font-size: 17px !default;
 
 // The base line height determines the basic unit of vertical rhythm.
-$base-line-height: 24px !default;
+$base-line-height: 26px !default;
 
 // The length unit in which to output vertical rhythm values.
 // Supported values: px, em, rem.
 $base-unit: 'em' !default;
 
 // The default font family.
-$base-font-family: sans-serif !default;
+$base-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+
 
 // The font sizes for h1-h6.
 $h1-font-size: 2    * $base-font-size !default;
