@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     resources :parcels, only: [:index, :show]
   end
 
-  root 'home#home'
+  root 'housing#index'
+  
+  resources :housing, only: [:index]
 end
