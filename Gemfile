@@ -7,6 +7,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.18.4'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'sass-rails'
 gem "paper_trail"
 gem "dotenv"
 gem 'resque', "~> 1.22.0"
