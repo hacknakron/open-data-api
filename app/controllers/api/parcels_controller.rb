@@ -1,10 +1,18 @@
 class API::ParcelsController < API::BaseController
   def index
-    render json: create_index_data(Parcel.order(:id).where(filter_params))
+    response_object = paginated_response(Parcel.order(:id).where(filter_params))
+
+    if stale?(response_object['data'])
+      render json: response_object
+    end
   end
 
   def show
-    render json: Parcel.find_by!(parcel_id: params[:id])
+    parcel = Parcel.find_by!(parcel_id: params[:id])
+
+    if stale?(parcel)
+      render json: { data: parcel }
+    end
   end
 
   private
