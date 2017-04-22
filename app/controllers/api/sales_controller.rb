@@ -6,7 +6,7 @@ class API::SalesController < API::BaseController
       objects = ParcelSale.order(:parcel_id, :sales_date)
     end
 
-    render json: objects.page(params[:page]).per(params[:per_page])
+    render json: create_index_data(objects)
   end
 
   def show

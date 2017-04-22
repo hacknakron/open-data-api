@@ -1,6 +1,6 @@
 class API::ParcelsController < API::BaseController
   def index
-    render json: Parcel.order(:id).where(filter_params).page(params[:page]).per(params[:per_page])
+    render json: create_index_data(Parcel.order(:id).where(filter_params))
   end
 
   def show
