@@ -43,7 +43,11 @@ We encourage everyone to submit pull requests to this project when they see some
 ### API
 
 The API endpoints only return json data and are found under the `api/` url
-namespace.
+namespace. All successful responses will have the data payload under a `data`
+property at the top-level of the response. For responses that contain multiple
+objects, they will contain a `meta` object with `count` and `pages` which refer
+to the total number of records in the database and the total number of pages
+which can be requested.
 
 #### Pagination
 

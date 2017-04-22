@@ -6,10 +6,12 @@ class API::SalesController < API::BaseController
       objects = ParcelSale.order(:parcel_id, :sales_date)
     end
 
-    render json: create_index_data(objects)
+    render json: paginated_response(objects)
   end
 
   def show
-    render json: ParcelSale.find_by!(object_id: params[:id])
+    render json: {
+      data: ParcelSale.find_by!(object_id: params[:id])
+    }
   end
 end

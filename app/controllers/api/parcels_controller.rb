@@ -1,10 +1,12 @@
 class API::ParcelsController < API::BaseController
   def index
-    render json: create_index_data(Parcel.order(:id).where(filter_params))
+    render json: paginated_response(Parcel.order(:id).where(filter_params))
   end
 
   def show
-    render json: Parcel.find_by!(parcel_id: params[:id])
+    render json: {
+      data: Parcel.find_by!(parcel_id: params[:id])
+    }
   end
 
   private

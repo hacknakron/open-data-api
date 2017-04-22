@@ -1,6 +1,6 @@
 class API::RootController < API::BaseController
   def index
-    api_information = {
+    render json: {
       data: {
         organization: 'Hack N Akron',
         project: {
@@ -15,10 +15,7 @@ class API::RootController < API::BaseController
           state: 'OH',
           zip_code: '44308'
         }
-      },
-      errors: {}
+      }
     }
-
-    render json: api_information
   end
 end
