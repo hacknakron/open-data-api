@@ -12,7 +12,7 @@
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'State');
     data.addColumn('number', 'Owners');
-    data.addRows(JSON.parse('<%= @outside_akron_owners_by_city.to_json.html_safe %>'));
+    data.addRows(JSON.parse('<%= @outside_akron_owners_by_state.to_json.html_safe %>'));
 
     // Set chart options
     var options = {'title': 'Parcel Owners Outside of Akron',
