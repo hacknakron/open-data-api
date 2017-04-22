@@ -1,1 +1,1 @@
-alert("Housing JS");
+console.log("Housing JS");
