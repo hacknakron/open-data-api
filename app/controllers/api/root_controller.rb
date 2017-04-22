@@ -1,6 +1,6 @@
 class API::RootController < API::BaseController
   def index
-    @response = {
+    api_information = {
       data: {
         organization: 'Hack N Akron',
         project: {
@@ -19,6 +19,6 @@ class API::RootController < API::BaseController
       errors: {}
     }
 
-    render json: @response
+    render json: api_information
   end
 end
