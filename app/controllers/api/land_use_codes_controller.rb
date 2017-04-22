@@ -2,6 +2,7 @@ class API::LandUseCodesController < API::BaseController
   def index
     render json: LandUseCode.order(:id).where(filter_params).page(params[:page]).per(params[:per_page])
   end
+
   def classes
     render json: [{use_class:'A', name: 'Agriculture'},  
     {use_class:'M', name:'Mineral Rights'},
@@ -14,8 +15,9 @@ class API::LandUseCodesController < API::BaseController
     {use_class:'G', name:'Oil and Gas interests'},
     {use_class:'U', name:'Railroad'}]
   end
+
   def show
-    render json: LandUseCode.find_by(value: params[:id])
+    render json: LandUseCode.find_by(use_code: params[:id])
   end
 
   private
