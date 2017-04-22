@@ -30,7 +30,9 @@ class Importer::Parcels < Importer
                                 owner_zip_code_2: convert_int(row[:ownzip2]),
                                 owner_city: convert_string(row[:cityname]),
                                 owner_state: convert_string(row[:statecode]),
-                                description: convert_string(row[:description])
+                                description: convert_string(row[:description]),
+                                use_class: convert_string(row[:class]),
+                                use_code: convert_int(row[:luc])
                                })
 
       next if parcel.parcel_id.blank?
