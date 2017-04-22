@@ -1,0 +1,23 @@
+<script type="text/javascript">
+
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  google.charts.setOnLoadCallback(salesByYear);
+
+  function salesByYear() {
+    var data = google.visualization.arrayToDataTable(<%=raw @avg_sales_by_year%>);
+    var options = {
+      title: 'Company Performance',
+      curveType: 'function',
+      legend: { position: 'bottom' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('salesByYear'));
+
+    chart.draw(data, options);
+  }
+</script>
+
+<div id="salesByYear"></div>
