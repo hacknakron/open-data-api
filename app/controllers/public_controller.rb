@@ -1,4 +1,5 @@
 class PublicController < ApplicationController
+  layout 'internal-page'
 
   def get_involved
 
