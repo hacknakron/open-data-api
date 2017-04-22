@@ -9,7 +9,7 @@
   function salesByYear() {
     var data = google.visualization.arrayToDataTable(<%=raw @avg_sales_by_year%>);
     var options = {
-      title: 'Company Performance',
+      title: 'Average Sales Price By Year',
       curveType: 'function',
       legend: { position: 'bottom' }
     };
