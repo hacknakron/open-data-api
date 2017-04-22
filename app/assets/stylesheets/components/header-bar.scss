@@ -1,3 +1,10 @@
 .header-bar {
   background-color: $primary-color-dark;
+  height: 45px;
+  
+  @media screen and (min-width: $break-large-screen) {
+    height: 90px;
+  }
 }
+
+
