@@ -28,7 +28,7 @@ class HousingController < ApplicationController
     sql = <<-SQL
       SELECT owner_state, COUNT(id) AS owner_count
       FROM parcels
-      WHERE owner_city != 'AKRON' AND owner_city != ''
+      WHERE owner_state != 'OH' AND owner_state != ''
       GROUP BY owner_state
     SQL
     ActiveRecord::Base.connection.execute(sql).map { |i| i.values }
