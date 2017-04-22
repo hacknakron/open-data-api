@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  namespace 'api' do
+  namespace 'api', only: [:index, :show], shallow: true do
     root 'root#index'
-    resources :parcels, only: [:index, :show] do
-    	resources :sales, only: [:index]
+    resources :parcels do
+    	resources :sales
     end
-    resources :sales, only: [:index, :show]
+    resources :sales
   end
 
   root 'housing#index'
-  
+
   resources :housing, only: [:index]
 end
