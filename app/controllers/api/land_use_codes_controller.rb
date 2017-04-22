@@ -4,7 +4,7 @@ class API::LandUseCodesController < API::BaseController
   end
 
   def classes
-    render json: [{use_class:'A', name: 'Agriculture'},  
+    render json: [{use_class:'A', name: 'Agriculture'},
     {use_class:'M', name:'Mineral Rights'},
     {use_class:'I', name:'Industrial'},
     {use_class:'O', name: 'Oil and Gas'},
@@ -17,7 +17,7 @@ class API::LandUseCodesController < API::BaseController
   end
 
   def show
-    render json: LandUseCode.find_by(use_code: params[:id])
+    render json: LandUseCode.find_by!(use_code: params[:id])
   end
 
   private
