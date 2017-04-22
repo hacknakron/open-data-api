@@ -1,10 +1,12 @@
 class API::SalesController < API::BaseController
   def index
-  	if(params[:parcel_id])
-  		render json: ParcelSale.where(parcel_id: params[:parcel_id]).order(:sales_date)
+    if params[:parcel_id]
+      objects = ParcelSale.where(parid: params[:parcel_id]).order(:sales_date)
     else
-    	render json: ParcelSale.order(:parcel_id, :sales_date).page(params[:page]).per(params[:per_page])
+      objects = ParcelSale.order(:parcel_id, :sales_date)
     end
+
+    render json: objects.page(params[:page]).per(params[:per_page])
   end
 
   def show
