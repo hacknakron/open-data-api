@@ -1,0 +1,68 @@
+.main-menu {
+  &-default {
+    align-items: center;
+    background: 
+    linear-gradient(
+      rgba($primary-color-light, 0.75), 
+      rgba($primary-color-light, 0.75)
+    ),
+    image-url('backgrounds/road-path.jpg');
+    background-size: cover;
+    display: flex;
+    height: 110px;
+    justify-content: space-between;
+    margin-top: 45px;
+    padding-left: 2em;
+    @media screen and (min-width: $break-large-screen) {
+      height: 200px;
+      margin-top: 80px;
+    }
+  }
+
+  h1 {
+    color: #fff;
+    text-align: center;
+    @media screen and (min-width: $break-large-screen) {
+      font-size: 3em;
+      text-align: left;
+    }
+  }
+}
+
+.show-menu-button {
+  height: 100%;
+  width: 185px;  
+  a {
+    align-items: center;
+    background: rgba(0,59,127,.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'work-sans';
+    font-size: 1.25em;
+    font-weight: bold;
+    height: 100%;
+    justify-content: center;
+    padding: 0 1em;
+    text-align: center;
+    text-decoration: none;  
+    transition: all .35s; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+
+    &:hover, &:focus {
+      background: rgba(red,.7);
+
+      img {
+        width: 50px;
+      }
+    }
+
+    img {
+      margin-top: 10px;
+      transition: all .35s;
+      width: 35px;
+    }
+  }
+}
+

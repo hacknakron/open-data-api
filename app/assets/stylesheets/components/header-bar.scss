@@ -62,9 +62,13 @@
       color: #fff;
       font-family: 'work-sans';
       height: 100%;
-      padding: 2em 1em;
+      padding: 1.8em 1em;
       text-decoration: none;
       text-transform: uppercase;
+
+      &:focus, &:hover {
+        background: rgba(#fff, .2);
+      }
     }
   }
 }
