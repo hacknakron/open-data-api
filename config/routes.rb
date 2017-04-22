@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  resources :ward, only: [:index]
+  namespace 'api' do
+    root 'root#index'
+    resources :parcels, only: [:index, :show]
+  end
+
   root 'home#home'
 end
