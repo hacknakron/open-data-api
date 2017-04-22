@@ -81,6 +81,8 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    normalize-scss (6.0.0)
+      sass (~> 3.3)
     paper_trail (6.0.2)
       activerecord (>= 4.0, < 5.2)
       request_store (~> 1.1)
@@ -174,6 +176,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.5)
   listen (~> 3.0.5)
+  normalize-scss
   paper_trail
   pg (~> 0.18.4)
   pry-byebug
