@@ -3,10 +3,10 @@
   flex-wrap: wrap;
   margin: 0 0;
   padding: 0 0;
+  transition: all .35s; 
 
   li {
     align-items: center;
-    background: #fcc;
     border-bottom: 1px solid rgba(255,255,255,.5);
     border-right: 1px solid rgba(255,255,255,.5);
     box-sizing: border-box;
@@ -14,7 +14,6 @@
     list-style-type: none;
     flex: 0 0 100%;
     height: 100px;
-    padding-left: 1.5em;
     @media screen and (min-width: $break-large-screen) {
       flex: 1 1 33%;
     }
@@ -29,21 +28,172 @@
   }
 
   a {
+    align-items: center;
     color: #fff;
+    display: flex;
     font-family: 'work-sans';
     font-size: 1.65em;
     font-weight: bold;
+    height: 100%;
     text-decoration: none;
+    width: 100%;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; 
+    -moz-osx-font-smoothing: grayscale;
+
+    span {
+      padding-left: 1.25em;
+    }
+  }
+
+  .labor {
+    background: linear-gradient(
+      rgba($primary-color-light, 0.75), 
+      rgba($primary-color-light, 0.75)
+    ),
+    image-url('backgrounds/road-path.jpg');
+
+    &:focus, &:hover {
+      background: linear-gradient(
+      rgba(red, 0.75), 
+      rgba(red, 0.75)
+    ),
+    image-url('backgrounds/road-path.jpg');
+    }
+  }
+
+  .business {
+    background: linear-gradient(
+      rgba($primary-color-light, 0.75), 
+      rgba($primary-color-light, 0.75)
+    ),
+    image-url('backgrounds/shop.jpg');
+
+    &:focus, &:hover {
+      background: linear-gradient(
+      rgba(red, 0.75), 
+      rgba(red, 0.75)
+    ),
+    image-url('backgrounds/shop.jpg');
+    }
+  }
+
+  .construction {
+    background: linear-gradient(
+      rgba($primary-color-light, 0.75), 
+      rgba($primary-color-light, 0.75)
+    ),
+    image-url('backgrounds/north-hill-residents.jpg');
+
+    &:focus, &:hover {
+      background: linear-gradient(
+      rgba(red, 0.75), 
+      rgba(red, 0.75)
+    ),
+    image-url('backgrounds/north-hill-residents.jpg');
+    }
+  }
+
+  .education {
+    background: linear-gradient(
+      rgba($primary-color-light, 0.75), 
+      rgba($primary-color-light, 0.75)
+    ),
+    image-url('backgrounds/shop.jpg');
+
+    &:focus, &:hover {
+      background: linear-gradient(
+      rgba(red, 0.75), 
+      rgba(red, 0.75)
+    ),
+    image-url('backgrounds/shop.jpg');
+    }
+  }
+
+  .transportation {
+    background: linear-gradient(
+      rgba($primary-color-light, 0.75), 
+      rgba($primary-color-light, 0.75)
+    ),
+    image-url('backgrounds/north-hill-residents.jpg');
+
+    &:focus, &:hover {
+      background: linear-gradient(
+      rgba(red, 0.75), 
+      rgba(red, 0.75)
+    ),
+    image-url('backgrounds/north-hill-residents.jpg');
+    }
+  }
+
+  .demographics {
+    background: linear-gradient(
+      rgba($primary-color-light, 0.75), 
+      rgba($primary-color-light, 0.75)
+    ),
+    image-url('backgrounds/road-path.jpg');
+
+    &:focus, &:hover {
+      background: linear-gradient(
+      rgba(red, 0.75), 
+      rgba(red, 0.75)
+    ),
+    image-url('backgrounds/road-path.jpg');
+    }
+  }
+
+  .technology {
+    background: linear-gradient(
+      rgba($primary-color-light, 0.75), 
+      rgba($primary-color-light, 0.75)
+    ),
+    image-url('backgrounds/road-path.jpg');
+
+    &:focus, &:hover {
+      background: linear-gradient(
+      rgba(red, 0.75), 
+      rgba(red, 0.75)
+    ),
+    image-url('backgrounds/road-path.jpg');
+    }
+  }
+
+  .safety {
+    background: linear-gradient(
+      rgba($primary-color-light, 0.75), 
+      rgba($primary-color-light, 0.75)
+    ),
+    image-url('backgrounds/shop.jpg');
+
+    &:focus, &:hover {
+      background: linear-gradient(
+      rgba(red, 0.75), 
+      rgba(red, 0.75)
+    ),
+    image-url('backgrounds/shop.jpg');
+    }
+  }
+
+  .housing {
+    background: linear-gradient(
+      rgba($primary-color-light, 0.75), 
+      rgba($primary-color-light, 0.75)
+    ),
+    image-url('backgrounds/north-hill-residents.jpg');
+
+    &:focus, &:hover {
+      background: linear-gradient(
+      rgba(red, 0.75), 
+      rgba(red, 0.75)
+    ),
+    image-url('backgrounds/north-hill-residents.jpg');
+    }
   }
 }
 
 .main-menu {
   &-default {
     align-items: center;
-    background: 
-    linear-gradient(
+    background: linear-gradient(
       rgba($primary-color-light, 0.75), 
       rgba($primary-color-light, 0.75)
     ),
@@ -74,6 +224,25 @@
   }
 }
 
+.hide-menu-button {
+  background: $primary-color-dark;
+  display: block;
+  color: #fff;
+  font-family: 'work-sans';
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: .75em 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:focus, &:hover {
+    background: #ae0204;
+  } 
+}
+
 .show-menu-button {
   height: 100%;
   width: 185px;  
@@ -91,12 +260,11 @@
     padding: 0 1em;
     text-align: center;
     text-decoration: none;  
-    transition: all .35s; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; 
 
     &:hover, &:focus {
-      background: rgba(red,.7);
+      background: rgba(red,.75);
 
       img {
         width: 50px;
