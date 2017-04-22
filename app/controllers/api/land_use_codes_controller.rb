@@ -17,13 +17,19 @@ class API::LandUseCodesController < API::BaseController
   end
 
   def index
-    render json: paginated_response(LandUseCode.order(:id).where(filter_params))
+    response_object = paginated_response(LandUseCode.order(:id).where(filter_params))
+
+    if stale?(response_object['data'])
+      render json: response_object
+    end
   end
 
   def show
-    render json: {
-      data: LandUseCode.find_by!(use_code: params[:id])
-    }
+    land_use_code = LandUseCode.find_by!(use_code: params[:id])
+
+    if stale?(land_use_code)
+      render json: { data: land_use_code }
+    end
   end
 
   private
