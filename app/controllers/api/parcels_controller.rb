@@ -4,7 +4,7 @@ class API::ParcelsController < API::BaseController
   end
 
   def show
-    render json: Parcel.find_by(parcel_id: params[:id])
+    render json: Parcel.find_by!(parcel_id: params[:id])
   end
 
   private

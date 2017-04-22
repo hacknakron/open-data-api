@@ -1,9 +1,75 @@
 .header-bar {
   background-color: $primary-color-dark;
+  color: #fff;
   height: 45px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
   
   @media screen and (min-width: $break-large-screen) {
-    height: 90px;
+    height: 80px;
+  }
+
+  h1 {
+    font-size: 1em;
+    @media screen and (min-width: $break-large-screen) {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.header-content {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  margin-left: 80px;
+  @media screen and (min-width: $break-large-screen) {
+    margin-left: 130px;
+  }
+}
+
+.header-logo-link {
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering:   -o-crisp-edges;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+  position: absolute;
+  top: 10px;
+  @media screen and (min-width: $break-large-screen) {
+    top: 20px;
+  }
+
+  img {
+    width: 70px;
+    @media screen and (min-width: $break-large-screen) {
+      width: 120px;
+    }
+  }
+}
+
+.main-links {
+  display: flex;
+  margin: 0 0;
+  padding: 0 0;
+
+  li {
+    list-style-type: none;
+    
+    a {
+      color: #fff;
+      font-family: 'work-sans';
+      height: 100%;
+      padding: 1.8em 1em;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:focus, &:hover {
+        background: rgba(#fff, .2);
+      }
+    }
   }
 }
 

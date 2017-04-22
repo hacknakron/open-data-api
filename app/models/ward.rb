@@ -1,4 +1,7 @@
 class Ward < ApplicationRecord
+  paginates_per 50
+  max_paginates_per 100
+  
   validates :district_id, presence: true, numericality: { only_integer: true }
   validates :distract_name, presence: true
   validates :ward_id, presence: true

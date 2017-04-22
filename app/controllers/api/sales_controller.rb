@@ -10,6 +10,6 @@ class API::SalesController < API::BaseController
   end
 
   def show
-    render json: ParcelSale.find_by(object_id: params[:id])
+    render json: ParcelSale.find_by!(object_id: params[:id])
   end
 end

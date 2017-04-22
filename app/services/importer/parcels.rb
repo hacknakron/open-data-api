@@ -5,7 +5,7 @@ class Importer::Parcels < Importer
     data.each do |row|
       parcel = ::Parcel.find_or_initialize_by({object_id: row[:objectid]})
 
-      land_use_code = LandUseCode.find_by_value(row[:luc])
+      land_use_code = LandUseCode.find_by_use_code(row[:luc])
 
       parcel.assign_attributes({parcel_id: convert_int(row[:parid]),
                                 tax_year: convert_int(row[:taxyr]),
