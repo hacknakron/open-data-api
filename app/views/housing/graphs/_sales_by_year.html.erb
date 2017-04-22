@@ -9,7 +9,6 @@
   function salesByYear() {
     var data = google.visualization.arrayToDataTable(<%=raw @avg_sales_by_year%>);
     var options = {
-      title: 'Average Sales Price By Year',
       curveType: 'function',
       legend: { position: 'bottom' }
     };
@@ -20,4 +19,8 @@
   }
 </script>
 
-<div id="salesByYear"></div>
+<div class="wrapper">
+  <h2>Average Sale Price By Year</h2>
+
+  <div id="salesByYear"></div>
+</div>

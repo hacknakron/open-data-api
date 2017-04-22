@@ -15,11 +15,10 @@
     data.addRows(JSON.parse('<%= @outside_akron_owners_by_state.to_json.html_safe %>'));
 
     // Set chart options
-    var options = {'title': 'Parcel Owners Outside of Akron',
-      'width': 600,
-      'height': 400,
+    var options = {
       'region': "US",
-      displayMode: 'markers',
+      colorAxis: {colors: ['#C0D7EA', '#75A7CF', '#00549d', '#152b45']},
+      resolution: "provinces"
     };
 
     // Instantiate and draw our chart, passing in some options.
@@ -28,4 +27,12 @@
   }
 </script>
 
-<div id="outside-akron-owners-by-city-chart"></div>
+<div class="wrapper">
+  <h2>Akron Properties Owned by People Outside of Ohio</h2>
+
+  <div id="outside-akron-owners-by-city-chart">
+
+  </div>
+</div>
+
+

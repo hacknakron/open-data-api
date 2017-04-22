@@ -1,4 +1,12 @@
-<%=render :partial => "housing/graphs/parcel_owned_count" %>
-<%=render :partial => "housing/graphs/outside_akron_owners_by_state" %>
-<%=render :partial => "housing/graphs/sales_by_year" %>
+<div class="content-container-2-up">
+  <div class="content-block">
+    <%= render :partial => "housing/graphs/parcel_owned_count" %>
+  </div>
+  <div class="content-block">
+    <%= render :partial => "housing/graphs/use_class_count" %>
+    </div>
+</div>
+<%= render :partial => "housing/graphs/sales_by_year" %>
+<%= render :partial => "housing/graphs/outside_akron_owners_by_state" %>
+
 

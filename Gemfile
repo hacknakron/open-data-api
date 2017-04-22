@@ -1,28 +1,27 @@
 source 'https://rubygems.org'
 ruby "2.3.1"
 
-gem 'active_model_serializers', '~> 0.10.0'
-gem 'dotenv-rails'
-gem 'jbuilder', '~> 2.5'
-gem 'kaminari'
-gem 'pg', '~> 0.18.4'
-gem 'puma', '~> 3.0'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'sass-rails'
-gem 'normalize-scss'
+gem 'active_model_serializers'
 gem 'autoprefixer-rails'
-gem "paper_trail"
-gem "dotenv"
-gem 'resque', "~> 1.22.0"
+gem 'dotenv-rails'
+gem 'jbuilder'
+gem 'kaminari'
+gem 'normalize-scss'
+gem 'paper_trail'
+gem 'pg'
+gem 'puma'
+gem 'rails'
+gem 'resque'
+gem 'sass-rails'
 
 group :development, :test do
   gem 'pry-byebug'
 end
 
 group :development do
-  gem 'listen', '~> 3.0.5'
+  gem 'listen'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen'
 end
 
 group :test do
