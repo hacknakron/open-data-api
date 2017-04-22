@@ -4,7 +4,7 @@ class API::BaseController < ActionController::API
   rescue_from ::Exception, with: :error_occurred
 
   protected
-  
+
 	def create_index_data objects
 		objects = objects.page(params[:page]).per(params[:per_page])
 		{
@@ -25,5 +25,4 @@ class API::BaseController < ActionController::API
       render json: { error: exception.message }.to_json, status: 404
       return
     end
->>>>>>> temp
 end
