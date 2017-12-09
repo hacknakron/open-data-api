@@ -17,6 +17,7 @@ Another great rails resource: https://www.railstutorial.org/
 The project uses the [dotenv](https://github.com/bkeepers/dotenv) gem to manage environment variables. This is how sensative information is stored (and not committed to source control). To get the application to run, you'll need a file called `.env` in the root of your project. It should have the following items in it:
 - FTP_HOST
 - FTP_PORT
+- FTP_PATH
 - FTP_USERNAME
 - FTP_PASSWORD
 
@@ -26,7 +27,10 @@ The project uses the [dotenv](https://github.com/bkeepers/dotenv) gem to manage 
 3. Run `rake data:import:seed_files` to seed the latest data
 4. Run `bundle exec rails s` to start the rails API server.
 
-### Running the File Importer
+### Running the File Importer with the sample data
+From the root of the project, run `rake data:sample`
+
+### Running the File Importer with FTP data
 From the root of the project, run `rake data:import`
 NOTE: You must have correctly set the ENV attributes for the import to pull correct data from the FTP server.
 
