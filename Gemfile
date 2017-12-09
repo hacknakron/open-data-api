@@ -11,6 +11,7 @@ gem 'paper_trail'
 gem 'pg'
 gem 'puma'
 gem 'rails'
+gem 'rack-cors', :require => 'rack/cors'
 gem 'resque'
 gem 'sass-rails'
 
