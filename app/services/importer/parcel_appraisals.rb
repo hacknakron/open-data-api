@@ -2,16 +2,23 @@ class Importer::ParcelAppraisals < Importer
 
   def import!
     super
-    data.each do |row|
-      parcel_appraisal = ParcelAppraisal.find_or_initialize_by({object_id: row[:objectid]})
-
-      parcel_appraisal.assign_attributes({parcel: Parcel.find_by_parcel_id(row[:parid]),
-                                          land_value: convert_int(row[:land_val]),
-                                          building_value: convert_int(row[:bldg_val])})
-
-      next if parcel_appraisal.land_value.blank? || parcel_appraisal.building_value.blank? || parcel_appraisal.parcel.blank?
-
-      parcel_appraisal.save! if parcel_appraisal.changed? || parcel_appraisal.new_record?
+    ::ParcelAppraisal.bulk_insert(:object_id, :parcel_id, :land_value, :building_value, :created_at, :updated_at) do |worker|
+      data.each do |row|
+        obj_id = convert_int(row[:objectid])
+        parcel = Parcel.find_by_parcel_id(row[:parid])
+        land_value = row[:msg]
+        building_value = convert_string(row[:msg]).split[0]
+        current_time = DateTime.now.to_s
+        
+        if parcel
+          worker.add(object_id: obj_id, 
+                      parcel_id: parcel.id, 
+                      land_value: convert_int(row[:land_val]), 
+                      building_value: convert_int(row[:bldg_val]), 
+                      created_at: current_time, 
+                      updated_at: current_time)
+        end
+      end
     end
   end
 end

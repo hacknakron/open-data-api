@@ -3,6 +3,6 @@ namespace :data do
     DataImporter.new.import_all
   end
   task :sample => :environment do
-    DataImporter.new.import_all
+    DataImporter.new.import_sample
   end
 end

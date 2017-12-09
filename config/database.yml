@@ -6,7 +6,8 @@ default: &default
 
 development:
   <<: *default
-  database: open-data-api_development
+  # database: open-data-api_development
+  database: ENV['DEV_DATABASE']
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,8 +18,8 @@ test:
 
 production:
   <<: *default
-  database: ENV['DATABASE']
-  host: ENV['DB_HOST']
-  port: ENV['DB_PORT']
-  username: ENV['DB_USERNAME']
-  password: ENV['DB_PASSWORD']
+  database: d2uakqf1nv1k51
+  host: ec2-23-21-224-199.compute-1.amazonaws.com
+  port: 5432
+  username: ybrlqzjaqnaosu
+  password: 7ef28381b34e871f2c8df02e848d634c526fdd650c1b2eb53c314bef22d432c5
