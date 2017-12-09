@@ -17,6 +17,8 @@ test:
 
 production:
   <<: *default
-  database: open-data-api_production
-  username: open-data-api-survey
-  password: <%= ENV['OPEN-DATA-API_DATABASE_PASSWORD'] %>
+  database: ENV['DATABASE']
+  host: ENV['DB_HOST']
+  port: ENV['DB_PORT']
+  username: ENV['DB_USERNAME']
+  password: ENV['DB_PASSWORD']
