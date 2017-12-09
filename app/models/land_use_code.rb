@@ -18,5 +18,5 @@ class LandUseCode < ApplicationRecord
   validates :object_id, presence: true
   validates :use_code, presence: true
   validates :label, presence: true
-  validates :use_class, presence: true
+  # validates :use_class, presence: true
 end
