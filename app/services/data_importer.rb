@@ -14,12 +14,25 @@ class DataImporter
     end
   end
 
-  def import_all
+  def get_sample_data(filename)
+    File.read(Rails.root.join('app', 'assets', 'sample_data', filename))
+  end
+
+  def import_sample
     IMPORT_ORDER.each do |file_type|
       klass = FILE_IMPORTERS[file_type]
       filename = "#{file_type}.csv"
       Rails.logger.info "Downloading file from City of Akron FTP file:#{filename}"
       klass.new(get_file_data(filename)).import!
+    end
+  end
+
+  def import_all
+    IMPORT_ORDER.each do |file_type|
+      klass = FILE_IMPORTERS[file_type]
+      filename = "#{file_type}.csv"
+      Rails.logger.info "Downloading file from City of Akron FTP file:#{filename}"
+      klass.new(get_sample_data(filename)).import!
     end
   end
 end
