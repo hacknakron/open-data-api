@@ -23,7 +23,7 @@ class DataImporter
       klass = FILE_IMPORTERS[file_type]
       filename = "#{file_type}.csv"
       Rails.logger.info "Downloading file from City of Akron FTP file:#{filename}"
-      klass.new(get_file_data(filename)).import!
+      klass.new(get_sample_data(filename)).import!
     end
   end
 
@@ -32,7 +32,7 @@ class DataImporter
       klass = FILE_IMPORTERS[file_type]
       filename = "#{file_type}.csv"
       Rails.logger.info "Downloading file from City of Akron FTP file:#{filename}"
-      klass.new(get_sample_data(filename)).import!
+      klass.new(get_file_data(filename)).import!
     end
   end
 end

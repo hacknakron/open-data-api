@@ -6,6 +6,7 @@ default: &default
 
 development:
   <<: *default
+  # database: open-data-api_development
   database: open-data-api_development
 
 # Warning: The database defined as "test" will be erased and
@@ -17,6 +18,8 @@ test:
 
 production:
   <<: *default
-  database: open-data-api_production
-  username: open-data-api-survey
-  password: <%= ENV['OPEN-DATA-API_DATABASE_PASSWORD'] %>
+  database: d2uakqf1nv1k51
+  host: ec2-23-21-224-199.compute-1.amazonaws.com
+  port: 5432
+  username: ybrlqzjaqnaosu
+  password: 7ef28381b34e871f2c8df02e848d634c526fdd650c1b2eb53c314bef22d432c5
